@@ -30,15 +30,15 @@ function App() {
     let [pass, setPass] = useState('');
 
     function handle() {
-        // if ((!password && !mail) || (!password || !mail)) {
-        //     setuser('Field cant be empty')
-        //     return;
-        // }
+        if ((!password && !mail) || (!password || !mail)) {
+            setuser('User not found')
+            return;
+        }
         if (mail) {
             let matched = data.map((email) => (
                 email.email === mail
             ))
-            if (!matched) {
+            if (matched.length !== 0) {
                 setuser('User not found');
                 return
             }
@@ -47,7 +47,7 @@ function App() {
             let matched = data.map((passcode) => (
                 passcode.password === password
             ))
-            if (!matched) {
+            if (matched.length !== 0) {
                 setPass("Password Incorrect");
                 return
             }
@@ -70,10 +70,10 @@ function App() {
                 <input type='email' id='input-email' value={mail} onChange={(e) => { setMail(e.target.value) }} />
                 <input type='password' id='input-password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
                 <button type='submit' id='submit-form-btn' />
+                <p id='user-error'>{user}</p>
+                <p id='password-error'>{pass}</p>
             </form>
 
-            <p id='user-error'>{user && user}</p>
-            <p id='password-error'>{pass && pass}</p>
         </div>
     )
 }
