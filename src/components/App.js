@@ -60,7 +60,7 @@ function App() {
                     setuser('');
                 }
             })
-        })
+        }, 3000)
 
     }
 
