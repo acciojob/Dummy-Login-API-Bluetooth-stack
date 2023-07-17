@@ -66,10 +66,10 @@ function App() {
 
     return (
         <div>
-            <form>
+            <form onSubmit={handle}>
                 <input type='email' id='input-email' value={mail} onChange={(e) => { setMail(e.target.value) }} />
                 <input type='password' id='input-password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                <button type='submit' id='submit-form-btn' onClick={handle} />
+                <button type='submit' id='submit-form-btn' />
             </form>
 
             <p id='user-error'>{user && user}</p>
