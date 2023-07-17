@@ -35,7 +35,7 @@ function App() {
         //     return;
         // }
         if (mail) {
-            matched = data.map((email) => (
+            let matched = data.map((email) => (
                 email.email === mail
             ))
             if (!matched) {
@@ -44,7 +44,7 @@ function App() {
             }
         }
         if (password) {
-            matched = data.map((passcode) => (
+            let matched = data.map((passcode) => (
                 passcode.password === password
             ))
             if (!matched) {
