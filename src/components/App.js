@@ -30,10 +30,10 @@ function App() {
     let [pass, setPass] = useState('');
 
     function handle() {
-        if ((!password && !mail) || (!password || !mail)) {
-            setuser('Field cant be empty')
-            return;
-        }
+        // if ((!password && !mail) || (!password || !mail)) {
+        //     setuser('Field cant be empty')
+        //     return;
+        // }
         if (mail) {
             matched = data.map((email) => (
                 email.email === mail
